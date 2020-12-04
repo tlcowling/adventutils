@@ -33,7 +33,7 @@ func ParseCommaSeparatedInts(in string) []int {
 	in = strings.TrimSpace(in)
 	nums := strings.Split(in, ",")
 	ints := make([]int, len(nums))
-	for i, num := range nums{
+	for i, num := range nums {
 		numI, err := strconv.Atoi(num)
 		if err != nil {
 			log.Fatalln(err)
