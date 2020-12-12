@@ -28,3 +28,18 @@ func TestParseCommaSeparatedIntsFromFile(t *testing.T) {
 	lines := ParseCommaSeparatedIntsFromFile("./testdata/csv_ints.txt")
 	assert.Equal(t, []int{14, 3, 4, 34, 354}, lines, "parse comma separated ints from file'")
 }
+
+func TestAbsInt(t *testing.T) {
+	assert.Equal(t, 1, AbsInt(-1))
+	assert.Equal(t, 1, AbsInt(1))
+	assert.Equal(t, 0, AbsInt(0))
+}
+
+func TestIntArrayMinMax(t *testing.T) {
+	min, max := IntArrayMinMax([]int{1, 2, 3})
+	assert.Equal(t, 1, min)
+	assert.Equal(t, 3, max)
+	min, max = IntArrayMinMax([]int{-10, 2, -30})
+	assert.Equal(t, -30, min)
+	assert.Equal(t, 2, max)
+}
